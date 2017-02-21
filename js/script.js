@@ -15,8 +15,7 @@ var gameState = 'notStarted',  //started // ended
         score: 0
     };
 
-var newGameBtn = document.getElementById('js-newGameButton'),
-    newGameElem = document.getElementById('js-newGameElement'),
+var newGameElem = document.getElementById('js-newGameElement'),
     pickElem = document.getElementById('js-playerPickElement'),
     resultsElem = document.getElementById('js-resultsTableElement');
 
@@ -61,7 +60,7 @@ function newGame() {
     setGameElements();
 
     playerNameElem.innerHTML = player.name;
-    setGamePoints(); // ta funkcja jeszcze nie powstała
+    setGamePoints();
   }
 }  
 
@@ -100,15 +99,15 @@ function checkRoundWinner(playerPick, computerPick) {
   checkIsGameEnd();
 }
 
-function checkIsGameEnd(){
-  if(player.score >= 10){
+function checkIsGameEnd() {
+  if(player.score >= 2){
     alert('Wygrałeś/aś');
-
   }
-  else if(computer.score >= 10){
+  else if(computer.score >= 2){
     alert('Wygrał komputer');
   }
 }
+
 
 function playerPick(playerPick) {
   if(gameState === 'started'){
