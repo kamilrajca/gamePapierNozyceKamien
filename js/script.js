@@ -100,14 +100,17 @@ function checkRoundWinner(playerPick, computerPick) {
 }
 
 function checkIsGameEnd() {
-  if(player.score >= 2){
-    alert('Wygrałeś/aś');
-  }
-  else if(computer.score >= 2){
-    alert('Wygrał komputer');
+  if(player.score >= 10 || computer.score >= 10) {
+    if (player.score >=10) {
+      alert('Wygrałeś/aś');
+    }
+    else if(computer.score >= 10) {
+      alert('Wygrał komputer');
+    }
+    gameState = 'ended';
+    setGameElements();
   }
 }
-
 
 function playerPick(playerPick) {
   if(gameState === 'started'){
